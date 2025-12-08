@@ -118,3 +118,48 @@ Interviewers LOVE asking why they are unsafe:
 They can run multiple times under React’s async/concurrent rendering, causing bugs.
 
 
+                               
+
+Q6. Why is it important to remvove the eventlistner?
+
+It is important to remove the the event listner as it keeps on relocating memory as we have  eventlishners asif we dont remove it it can create memory leaks 
+it keeps on relocating the limited memory we get from the browser and so it can causwe memory loss and can crasg our web aapplication. 
+
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  Real DOM vs Virtual DOM
+
+
+
+well real dom gives us direct manupulation to the browsers elements or to the tree so whenever we change something or a state change occurs ,
+the full webpage will rerender even a small chnage in the real DOM can rerender whole page so to avoid that and maximize the performance,
+React gave us a feature that is virtual dom and it created a virtual dom tree object for that change we did and will compare with the previous change and will process only the changed object so
+real dom will only get the changed state and so that will not rener the whole page . 
+
+
+
+
+
+
+
+
+
