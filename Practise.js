@@ -153,7 +153,21 @@ it keeps on relocating the limited memory we get from the browser and so it can 
 well real dom gives us direct manupulation to the browsers elements or to the tree so whenever we change something or a state change occurs ,
 the full webpage will rerender even a small chnage in the real DOM can rerender whole page so to avoid that and maximize the performance,
 React gave us a feature that is virtual dom and it created a virtual dom tree object for that change we did and will compare with the previous change and will process only the changed object so
-real dom will only get the changed state and so that will not rener the whole page . 
+real dom will only get the changed state and so that will not rener the whole page .
+
+
+
+
+
+
+19. Why do React Hooks make use of refs?
+Earlier, refs were only limited to class components but now it can also be accessible in function components through the useRef Hook in React.
+
+The refs are used for:
+
+Managing focus, media playback, or text selection.
+Integrating with DOM libraries by third-party.
+Triggering the imperative animations
 
 
 
