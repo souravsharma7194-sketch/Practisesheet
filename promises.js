@@ -49,3 +49,85 @@
 
 //     * CALLBACK HELL (FUNCTION INSIDE ANOTHER FUNCTION)
 // * INVERSION OF CONTROL (WE GAVE CONTROL OF ONE FUNCTION TO ANOTHER FUNCTION WE DONT KNOW IF THAT FUNC WILL EXECUTE THE NEXT CALLBACK OR NOT SO WE LOOSE CONTROL i.e  INVERSION OF CONTROL)
+
+
+PROMISES 
+                                     
+
+promises comes into picture as it will definately call our callback function so we dont have to worry on other function .
+
+
+
+earlier createOrder(cart, function (orderId) {
+    
+    proceedToPayment(orderId);
+
+});
+
+
+we gave control of our api to another api which we are not aware of how much time that takes will it call our callback if it does what if it executes our callback twice so, we make promise.PROMISES
+
+const promise = createOrder(cart);
+this will give us data an empty object INITIALLTY IT WILL BE UNDEFINED.
+
+
+const promise = createOrder(cart);
+
+promise.then(function (orderId) {
+    
+    proceedToPayment(orderId);
+
+});
+
+here we are attaching a callback func to a promise, EARLIER WE WERE PASSING CALLBACK FUNC TO ANOTHER Function.apply
+
+as soon as this promise is filled with its data it will automatically call the callback.and it will call it once only once.its a gaurantee that javascript provides us.ANOTHER
+
+
+
+{ FETCH }
+
+const GIT_HUB_API = "";
+
+const user = fetch(GIT_HUB_API)
+
+console.log(user);
+
+user.then(funtion(data){
+
+    console.log(data);
+
+
+})
+
+
+this log will give us < pending > in console because it is an inconsistency of browser. 
+
+
+3 states of a promise 
+
+    * pending : promise
+    *    promiseState: "fullfilled"
+    * rejected: Response;
+    * 
+    * 
+    * 
+
+
+    PROMMISE OBJECTS ARE IMMUTABLE THAT WHENEVER IT IS FULLFILLED AND WHENEVER WE HAVE DATA INSIDE OUR PROMISE WE CAN USE DATA ANYWHERE AND OUR DATA CAN NOT BE MUTATABLE BY ANYONE
+WE CANNOT EDIT THIS USER NOW IF ANYONE DOES SO IT IS HANDLED BY US AND RESOLVED ONLY ONCE AND PASS TO ANYWHERE.AND
+
+
+
+A PROMISE IS AN OBJECT REPRESENTING EVENTUAL COMPLETION OR FAILURE OF AN ASCNCHRONOUS OPERATIONS.
+
+
+
+
+                      {PROMISE CHAINING}
+
+
+
+
+
+.then() creates promise chaining with callbacks.
