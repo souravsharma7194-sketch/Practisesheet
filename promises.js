@@ -131,3 +131,53 @@ A PROMISE IS AN OBJECT REPRESENTING EVENTUAL COMPLETION OR FAILURE OF AN ASCNCHR
 
 
 .then() creates promise chaining with callbacks.
+
+
+
+    Q.How can you directly manipulate the DOM directly in react js ?
+        
+Short answer: You can, but you shouldn't in most cases.
+
+Why you shouldn't: React manages the DOM through its Virtual DOM. If you manipulate the DOM directly, you bypass React's system, which can cause:
+
+React's state and the actual DOM to get out of sync
+Unpredictable behavior
+Your changes being overwritten by React
+Bugs that are hard to track down
+The React way instead:
+
+1. Use state to control elements:
+
+javascript
+function Example() {
+    const [color, setColor] = useState('red');
+    
+    return (
+        <div style={{color: color}}>
+            <button onClick={() => setColor('blue')}>Change Color</button>
+        </div>
+    );
+}
+2. Use refs when you really need direct access:
+
+javascript
+function Example() {
+    const inputRef = useRef(null);
+    
+    const focusInput = () => {
+        inputRef.current.focus();  // This is acceptable
+    };
+    
+    return (
+        <>
+            <input ref={inputRef} />
+            <button onClick={focusInput}>Focus Input</button>
+        </>
+    );
+}
+When direct DOM manipulation is acceptable with refs:
+
+Managing focus
+Triggering animations
+Integrating with non-React libraries (like D3.js)
+Measuring element dimensions     
